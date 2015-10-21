@@ -1,5 +1,5 @@
 $(document).on('pageshow', '#sh_Verified_false', function(){  
-alert("sh_Verified_false one");
+//alert("sh_Verified_false one");
 $('#lis_shsollrfalse').empty();
 
 
@@ -162,8 +162,8 @@ error: function (request,error) {
 }
 });*/
 
-alert(qualification_id +'qualification_id');
-alert(user_ida +'user');
+//alert(qualification_id +'qualification_id');
+//alert(user_ida +'user');
 
 if(qualification_id == '12' || qualification_id == '13' || qualification_id == '14' || qualification_id == '15'){
 //alert('function address id 12 to 15');
@@ -178,7 +178,7 @@ for(a=0;a<sh_addressid_records_array.length;a++){
 
   if( h == g && hadd == qualification_id){
     address_objag = sh_addressid_records_array[a];
-alert(address_objag.user_id+'addressid_records_array');
+//alert(address_objag.user_id+'addressid_records_array');
 }
 
 }
@@ -198,7 +198,7 @@ g =super_obj.verification_user_id;
 if( h == g && hedu == qualification_id){
 
   eductional_objaa = sh_educational_records_array[a];
-  alert(eductional_objaa+'edutype');
+  //alert(eductional_objaa+'edutype');
 
 }
 
@@ -219,7 +219,7 @@ for(a=0;a<sh_employment_records_array.length;a++){
 if( hu == gu && huemploy == qualification_id ){
 //alert(hu+'iiiiiiiiiiin');
 employment_objad = sh_employment_records_array[a];
-alert('employ');
+//alert('employ');
 //alert(employment_objad.user_id+"emp----o"+employment_objad.employment_type)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }

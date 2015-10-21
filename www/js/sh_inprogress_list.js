@@ -180,12 +180,15 @@ for(a=0;a<sh_educational_records_array.length;a++){
   super_obj = Inprogress_sh[index];
   h =eductional_obj.user_id;
   hedu=eductional_obj.education_type;
-//alert(hedu+'hdeducompare'+qualification_id); 
+//alert(hedu+'hdeducompare'+qualification_id);
+ 
 g =super_obj.verification_user_id;
 //alert(g+'gg');
-
+//alert(h+'h'+g+'g');
+//alert(hedu+'hedu'+qualification_id);
 if( h == g && hedu == qualification_id){
-
+//alert(h+'h'+g+'g'+'inside');
+//alert(hedu+'hedu'+qualification_id+'inside');
   eductional_objaa = sh_educational_records_array[a];
   //alert(eductional_objaa+'edutype');
 

@@ -1,6 +1,9 @@
 $(document).on('pageshow', '#sh_inprogress_inside', function(){  
 //alert("sh_inprogress_inside");
 
+
+$('.ssnewin').empty();
+
 $('#sda_newcww').empty();
 $('#lii_newcww').empty();
 $('.document_imag_inproone_newaaa').empty();
@@ -151,7 +154,10 @@ for(a=0;a<employment_upload_array.length;a++){
 
   if(empimgempl == qualification_id && empidempl == verification_user_id ){
 
-//alert('7');
+var oneemp=employimg_obj.document;
+//alert(oneemp);
+  $('.ssnewin').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 
 k++;
 oneemploy[k]=employimg_obj.document;
@@ -233,6 +239,10 @@ var empid=employimg_obj.verification_master_id;
 if(empimg == qualification_id && empid == verification_user_id ) {
 //alert(empimg+"empimg");
 //var oneemp=employimg_obj.document;
+var oneemp=employimg_obj.document;
+//alert(oneemp);
+  $('.ssnewin').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 j++;
 oneemp[j]=employimg_obj.document;
 var arr_a=oneemp[0];
@@ -314,6 +324,10 @@ var oneid=addressimg_obj.user_id;
 
 if(oneimg == qualification_id && oneid == verification_user_id ){
 //alert("if address proof");
+var oneemp=addressimg_obj.document_name;
+//alert(oneemp);
+  $('.ssnewin').append('<li><a href="http://staging.eimpressive.com/watchguardlive/documents/addressid/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/documents/addressid/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 j++;
 oneaddress[j]=addressimg_obj.document_name;
 

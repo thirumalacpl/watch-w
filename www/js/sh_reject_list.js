@@ -1,5 +1,5 @@
 $(document).on('pageshow', '#sh_reject_listio', function(){  
-alert("sh_reject_list one");
+//alert("sh_reject_list one");
 $('#lis_shsollr').empty();
 //alert("supervisor_list_view");
 
@@ -63,8 +63,8 @@ insertassign_address_array =  JSON.parse(sessionStorage.getItem("insertassign_ad
 var superempty=completed_sh;
 
 if(superempty == ""){
-  alert(superempty+'No record Found');
-  $.mobile.changePage($('#co_dashboard'), { transition: "none", changeHash: true, reverse: false });
+  alert('No record Found');
+  $.mobile.changePage($('#dashboard_sh'), { transition: "none", changeHash: true, reverse: false });
 }
 
 for(a=0;a<completed_sh.length;a++){
@@ -166,8 +166,8 @@ error: function (request,error) {
 }
 });*/
 
-alert(qualification_id +'qualification_id');
-alert(user_ida +'user');
+//alert(qualification_id +'qualification_id');
+//alert(user_ida +'user');
 
 if(qualification_id == '12' || qualification_id == '13' || qualification_id == '14' || qualification_id == '15'){
 //alert('function address id 12 to 15');
@@ -182,7 +182,7 @@ for(a=0;a<sh_addressid_records_array.length;a++){
 
   if( h == g && hadd == qualification_id){
     address_objag = sh_addressid_records_array[a];
-alert(address_objag.user_id+'addressid_records_array');
+//alert(address_objag.user_id+'addressid_records_array');
 }
 }
 
@@ -197,11 +197,11 @@ for(a=0;a<insertassign_address_array.length;a++){
 //alert(g+'gg');
 
 if( huu == guu && huemployy == qualification_id ){
-alert(huu+'iiiiiiiiiiin'+guu);
-alert(huemployy+'iihu qualiiin'+qualification_id);
+//alert(huu+'iiiiiiiiiiin'+guu);
+//alert(huemployy+'iihu qualiiin'+qualification_id);
 insert_add = insertassign_address_array[a];
 //alert('employ');
-alert(insert_add.Verification_Master_Id+"emp----o"+insert_add.id)
+//alert(insert_add.Verification_Master_Id+"emp----o"+insert_add.id)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
 }
@@ -222,7 +222,7 @@ g =super_obj.Verification_Master_Id;
 if( h == g && hedu == qualification_id){
 
   eductional_objaa = sh_educational_records_array[a];
-  alert(eductional_objaa+'edutype');
+  ///alert(eductional_objaa+'edutype');
 
 }
 }
@@ -238,11 +238,11 @@ for(a=0;a<insertassign_education_array.length;a++){
 //alert(g+'gg');
 
 if( huu == guu && huemployy == qualification_id ){
-alert(huu+'iiiiiiiiiiin'+guu);
-alert(huemployy+'iihu qualiiin'+qualification_id);
+//alert(huu+'iiiiiiiiiiin'+guu);
+//alert(huemployy+'iihu qualiiin'+qualification_id);
 insert_edu = insertassign_education_array[a];
 //alert('employ');
-alert(insert_edu.Verification_Master_Id+"emp----o"+insert_edu.edu_type)
+//alert(insert_edu.Verification_Master_Id+"emp----o"+insert_edu.edu_type)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
 }
@@ -263,7 +263,7 @@ for(a=0;a<sh_employment_records_array.length;a++){
 if( hu == gu && huemploy == qualification_id ){
 //alert(hu+'iiiiiiiiiiin');
 employment_objad = sh_employment_records_array[a];
-alert('employ');
+//alert('employ');
 //alert(employment_objad.user_id+"emp----o"+employment_objad.employment_type)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
@@ -280,11 +280,11 @@ for(a=0;a<insertassign_employment_array.length;a++){
 //alert(g+'gg');
 
 if( huu == guu && huemployy == qualification_id ){
-alert(huu+'iiiiiiiiiiin'+guu);
-alert(huemployy+'iihu qualiiin'+qualification_id);
+//alert(huu+'iiiiiiiiiiin'+guu);
+//alert(huemployy+'iihu qualiiin'+qualification_id);
 insert_emp = insertassign_employment_array[a];
 //alert('employ');
-alert(insert_emp.Verification_Master_Id+"emp----o"+insert_emp.edu_type)
+//alert(insert_emp.Verification_Master_Id+"emp----o"+insert_emp.edu_type)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
 }

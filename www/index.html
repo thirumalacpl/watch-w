@@ -39,6 +39,8 @@
 	<script src="support.js" type="text/javascript"></script>
 <!--upload end-->
 
+<script src="js/imageflip.mini.js"></script>
+
   <!--icons-->
  
   <link rel="stylesheet" href="icons/css/material-design-iconic-font.css" />
@@ -671,11 +673,167 @@ a.control_next {
 <div data-role="page" id="sh_new_inside">
  <script src="js/sh_new_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+
+<style type="text/css">
+
+#sliderrqw {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#sliderrqw ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#sliderrqw ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#sliderrqw ul li').length;
+  var slideWidth = $('#sliderrqw ul li').width();
+  var slideHeight = $('#sliderrqw ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#sliderrqw').css({ width: slideWidth, height: slideHeight });
+  
+  $('#sliderrqw ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#sliderrqw ul li:last-child').prependTo('#sliderrqw ul');
+
+$("#sliderrqw").on("swipeleft",function(){
+  $('#sliderrqw ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderrqw ul li:last-child').prependTo('#sliderrqw ul');
+            $('#sliderrqw ul').css('left', '');
+        });
+});
+
+$("#sliderrqw").on("swiperight",function(){
+
+   $('#sliderrqw ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderrqw ul li:first-child').appendTo('#sliderrqw ul');
+            $('#sliderrqw ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#sliderrqw ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderrqw ul li:last-child').prependTo('#sliderrqw ul');
+            $('#sliderrqw ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#sliderrqw ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderrqw ul li:first-child').appendTo('#sliderrqw ul');
+            $('#sliderrqw ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_new_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
 
 
 
@@ -738,45 +896,29 @@ a.control_next {
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellTop" class="showOnJS hidden">
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="sliderrqw" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnew" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="document_imag_inproone_newcc rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="document_imag_inproone_newdd rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="document_imag_inproone_newbb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="document_imag_inproone_newaa rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="document_imag_inproone_newee rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="document_imag_inproone_newff rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
+</div>
+</div>
+</div>
 
 
 
-
-
+<div class="proof">
 
  <div class="ui-grid-b pri_grid_2" id="sda_newcw">
      <!--        <div class="ui-block-a pri_grid_1 pri_grid_bor">
@@ -799,21 +941,14 @@ a.control_next {
             </div> -->
             
         </div>
-
+</div>
  
   <div class="ui-grid-solo pri_list">
     <div class="ui-block-a">
 
    <ul id="lii_newcw">
 
-
-
-
-
-
 </ul>
-
-        
 
    </div>
 
@@ -858,27 +993,7 @@ a.control_next {
  </form>
     </div> -->
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellTop").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
 
-}).call(this);
-</script>
 
 </div>
 
@@ -977,12 +1092,165 @@ a.control_next {
 <div data-role="page" id="sh_inprogress_inside">
  <script src="js/sh_inprogress_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
 
+<style type="text/css">
+
+#sliderq {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#sliderq ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#sliderq ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#sliderq ul li').length;
+  var slideWidth = $('#sliderq ul li').width();
+  var slideHeight = $('#sliderq ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#sliderq').css({ width: slideWidth, height: slideHeight });
+  
+  $('#sliderq ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#sliderq ul li:last-child').prependTo('#sliderq ul');
+
+$("#sliderq").on("swipeleft",function(){
+      $('#sliderq ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderq ul li:last-child').prependTo('#sliderq ul');
+            $('#sliderq ul').css('left', '');
+        });
+});
+$("#sliderq").on("swiperight",function(){
+    $('#sliderq ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderq ul li:first-child').appendTo('#sliderq ul');
+            $('#sliderq ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#sliderq ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderq ul li:last-child').prependTo('#sliderq ul');
+            $('#sliderq ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#sliderq ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderq ul li:first-child').appendTo('#sliderq ul');
+            $('#sliderq ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_inprogress_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
 
 
       <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
@@ -1043,41 +1311,25 @@ a.control_next {
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellTopwwwqwqe" class="showOnJS hidden">
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="sliderq" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnewin" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="document_imag_inproone_newccc rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="document_imag_inproone_newddd rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="document_imag_inproone_newbbb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="document_imag_inproone_newaaa rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="document_imag_inproone_neweee rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="document_imag_inproone_newfff rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
-
+</div>
+</div>
+</div>
 
 
 <div class="proof">
@@ -1156,27 +1408,6 @@ a.control_next {
  </form>
     </div> -->
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellTopwwwqwqe").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
-
-}).call(this);
-</script>
 
 </div>
 
@@ -1263,14 +1494,14 @@ a.control_next {
 
 <div class="ui-grid-b" style="padding-top:5%;" id="chatqc" >
 
-<div class="ui-grid-b" style="padding-top:5%;"><div class="ui-block-a msg_grid_3"><span class="msg_span_3">14/02/2015</span> <br><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;    padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">18:25</span></div><div class="ui-block-b msg_grid_4">  <p class="msg_box msg_mid_bg">A newtroan is the A newtroan is the process of next stage of employer screen </p></div><div class="ui-block-c msg_grid_5"><img src="images/primary/chat-icon.png" alt="" style="padding: 0px 2px 1px 18px;"><p style="float: right;margin-right: 25px;margin-top: -5px;color:#54566B">hari</p></div></div>      
+<!-- <div class="ui-grid-b" style="padding-top:5%;"><div class="ui-block-a msg_grid_3"><span class="msg_span_3">14/02/2015</span> <br><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;    padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">18:25</span></div><div class="ui-block-b msg_grid_4">  <p class="msg_box msg_mid_bg">A newtroan is the A newtroan is the process of next stage of employer screen </p></div><div class="ui-block-c msg_grid_5"><img src="images/primary/chat-icon.png" alt="" style="padding: 0px 2px 1px 18px;"><p style="float: right;margin-right: 25px;margin-top: -5px;color:#54566B">hari</p></div></div>      
 
   
 <div class="ui-grid-b"  id="image"><div class="ui-block-a msg_grid_3" style="margin-top: 6%;"> <i class="zmdi zmdi-time zmd-fw" style="    opacity: 0.5; padding-left:7%;"></i><span class="msg_span_3">17:25</span><br><span class="msg_span_3">12/02/2015</span>  </div><div class="ui-block-b msg_box msg_grid_4"><p class="msg_grid_p_1"><a href="#"  class=""><img src="http://115.118.113.83/watchguardlive/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Band"></a></p></div><div class="ui-block-c msg_grid_5" style="padding-top:5%;"></div>
    </div> 
 
 
-<div class="ui-grid-b" style="padding-top:1%;"><div class="ui-block-a msg_grid_3"><img src="images/primary/chat-icon.png" alt="" style="    padding: 10px 2px 1px 18px;"><p style=" margin-left: 15px;margin-top: -5px;color:#54566B">sudeep</p></div><div class="ui-block-b msg_grid_4"> <p class="msg_box  tip">A newtroan is the process of next stage of employer screen A newtroan is the process of next stage of employer screen  </p><br> </div><div class="ui-block-c msg_grid_5"> <span class="msg_span_3">14/02/2015</span><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">18:25</span></div></div> 
+<div class="ui-grid-b" style="padding-top:1%;"><div class="ui-block-a msg_grid_3"><img src="images/primary/chat-icon.png" alt="" style="    padding: 10px 2px 1px 18px;"><p style=" margin-left: 15px;margin-top: -5px;color:#54566B">sudeep</p></div><div class="ui-block-b msg_grid_4"> <p class="msg_box  tip">A newtroan is the process of next stage of employer screen A newtroan is the process of next stage of employer screen  </p><br> </div><div class="ui-block-c msg_grid_5"> <span class="msg_span_3">14/02/2015</span><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">18:25</span></div></div>  -->
 
    </div>
 <!--upload-->
@@ -1403,11 +1634,166 @@ a.control_next {
 <div data-role="page" id="sh_tobe_approved_inside">
  <script src="js/sh_tobe_approved_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+
+<style type="text/css">
+
+#sliderqa {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#sliderqa ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#sliderqa ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#sliderqa ul li').length;
+  var slideWidth = $('#sliderqa ul li').width();
+  var slideHeight = $('#sliderqa ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#sliderqa').css({ width: slideWidth, height: slideHeight });
+  
+  $('#sliderqa ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#sliderqa ul li:last-child').prependTo('#sliderqa ul');
+
+$("#sliderqa").on("swipeleft",function(){
+ $('#sliderqa ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderqa ul li:last-child').prependTo('#sliderqa ul');
+            $('#sliderqa ul').css('left', '');
+        });
+});
+
+$("#sliderqa").on("swiperight",function(){
+  $('#sliderqa ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderqa ul li:first-child').appendTo('#sliderqa ul');
+            $('#sliderqa ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#sliderqa ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderqa ul li:last-child').prependTo('#sliderqa ul');
+            $('#sliderqa ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#sliderqa ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderqa ul li:first-child').appendTo('#sliderqa ul');
+            $('#sliderqa ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_tobe_approved_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
 
 
 
@@ -1469,40 +1855,25 @@ a.control_next {
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellToptobeapproved" class="showOnJS hidden">
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="sliderqa" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnewinp" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="approved_shc rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="approved_shd rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="approved_shb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="approved_sha rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="approved_she rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="approved_shf rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
+</div>
+</div>
+</div>
 
 
 
@@ -1606,28 +1977,6 @@ a.control_next {
  </form>
     </div> -->
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellToptobeapproved").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
-
-}).call(this);
-</script>
-
 </div>
 
 </div>
@@ -1728,11 +2077,167 @@ a.control_next {
 <div data-role="page" id="sh_completed_inside">
  <script src="js/sh_completed_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+
+<style type="text/css">
+
+#sliderqaq {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#sliderqaq ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#sliderqaq ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#sliderqaq ul li').length;
+  var slideWidth = $('#sliderqaq ul li').width();
+  var slideHeight = $('#sliderqaq ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#sliderqaq').css({ width: slideWidth, height: slideHeight });
+  
+  $('#sliderqaq ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#sliderqaq ul li:last-child').prependTo('#sliderqaq ul');
+
+$("#sliderqaq").on("swipeleft",function(){
+   $('#sliderqaq ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderqaq ul li:last-child').prependTo('#sliderqaq ul');
+            $('#sliderqaq ul').css('left', '');
+        });
+});
+
+$("#sliderqaq").on("swiperight",function(){
+ $('#sliderqaq ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderqaq ul li:first-child').appendTo('#sliderqaq ul');
+            $('#sliderqaq ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#sliderqaq ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderqaq ul li:last-child').prependTo('#sliderqaq ul');
+            $('#sliderqaq ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#sliderqaq ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderqaq ul li:first-child').appendTo('#sliderqaq ul');
+            $('#sliderqaq ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_completed_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
+
 
 
 
@@ -1794,40 +2299,25 @@ a.control_next {
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellTopcompleted" class="showOnJS hidden">
+   <div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="sliderqaq" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnewinpc" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="document_imag_inproone_newcccc rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="document_imag_inproone_newddcd rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="document_imag_inproone_newbbcb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="document_imag_inproone_newaaca rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="document_imag_inproone_neweece rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="document_imag_inproone_newffcf rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
+</div>
+</div>
+</div>
 
 
 
@@ -1900,27 +2390,7 @@ a.control_next {
 
                       
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellTopcompleted").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
 
-}).call(this);
-</script>
 
 </div>
 
@@ -2023,11 +2493,169 @@ a.control_next {
 <div data-role="page" id="sh_waiting_inside">
  <script src="js/sh_waiting_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+
+
+<style type="text/css">
+
+#sliderrq {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#sliderrq ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#sliderrq ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#sliderrq ul li').length;
+  var slideWidth = $('#sliderrq ul li').width();
+  var slideHeight = $('#sliderrq ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#sliderrq').css({ width: slideWidth, height: slideHeight });
+  
+  $('#sliderrq ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#sliderrq ul li:last-child').prependTo('#sliderrq ul');
+
+$("#sliderrq").on("swipeleft",function(){
+ $('#sliderrq ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderrq ul li:last-child').prependTo('#sliderrq ul');
+            $('#sliderrq ul').css('left', '');
+        });
+});
+
+$("#sliderrq").on("swiperight",function(){
+ $('#sliderrq ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderrq ul li:first-child').appendTo('#sliderrq ul');
+            $('#sliderrq ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#sliderrq ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderrq ul li:last-child').prependTo('#sliderrq ul');
+            $('#sliderrq ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#sliderrq ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderrq ul li:first-child').appendTo('#sliderrq ul');
+            $('#sliderrq ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_waiting_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
+
+
 
 
 
@@ -2088,40 +2716,26 @@ a.control_next {
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellTopcompletedw" class="showOnJS hidden">
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="sliderrq" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+
+ <ul class="iGallery ssnewinpw" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="waiting_imagec rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="waiting_imageb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="waiting_imagea rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="waiting_imaged rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="waiting_imagee rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="waiting_imagef rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
+</div>
+</div>
+</div>
 
 
 
@@ -2193,27 +2807,6 @@ a.control_next {
 </form>
         
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellTopcompletedw").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
-
-}).call(this);
-</script>
 
 </div>
 
@@ -2309,13 +2902,165 @@ a.control_next {
    
 <div data-role="page" id="sh_reject_inside">
  <script src="js/sh_reject_inside.js"></script>
+<style type="text/css">
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+#slidertt {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
 
+#slidertt ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#slidertt ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#slidertt ul li').length;
+  var slideWidth = $('#slidertt ul li').width();
+  var slideHeight = $('#slidertt ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#slidertt').css({ width: slideWidth, height: slideHeight });
+  
+  $('#slidertt ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#slidertt ul li:last-child').prependTo('#slidertt ul');
+
+$("#slidertt").on("swipeleft",function(){
+   $('#slidertt ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slidertt ul li:last-child').prependTo('#slidertt ul');
+            $('#slidertt ul').css('left', '');
+        });
+});
+
+$("#slidertt").on("swiperight",function(){
+ $('#slidertt ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slidertt ul li:first-child').appendTo('#slidertt ul');
+            $('#slidertt ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#slidertt ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slidertt ul li:last-child').prependTo('#slidertt ul');
+            $('#slidertt ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slidertt ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slidertt ul li:first-child').appendTo('#slidertt ul');
+            $('#slidertt ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_reject_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
 
 
       <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
@@ -2371,40 +3116,26 @@ a.control_next {
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellToprejectqwe" class="showOnJS hidden">
+
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="slidertt" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnewinpcq" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="rejectc rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="rejectd rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="rejectb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="rejecta rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="rejecte rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="rejectf rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
+</div>
+</div>
+</div>
 
 
 
@@ -2466,27 +3197,6 @@ a.control_next {
 <br>
                       
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellToprejectqwe").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
-
-}).call(this);
-</script>
 
 </div>
 
@@ -2586,11 +3296,7 @@ a.control_next {
 <div data-role="page" id="">
  <script src="js/sh_verified_false_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+
 
 
 
@@ -2646,41 +3352,25 @@ a.control_next {
          </div>
 
 <div data-role="main" class="ui-content">
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellToprejectqwertc" class="showOnJS hidden">
+<div id="sliderrqwe" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnewinpwe" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="falsec rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="falsed rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="falseb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="falsea rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="falsee rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="falsef rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
+</div>
+</div>
+</div>
 
 
 
@@ -2739,27 +3429,6 @@ a.control_next {
 <br>
                       
 
-  <script type="text/javascript">
-(function() {
-  $("#rondellToprejectqwertc").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
-
-}).call(this);
-</script>
 
 </div>
 
@@ -2772,12 +3441,165 @@ a.control_next {
 <div data-role="page" id="sh_verified_false_inside">
  <script src="js/sh_verified_false_inside.js"></script>
 
-    <script src="js/jquery.rondell.js"></script>
- <link rel="stylesheet" href="css/screen.css" type="text/css" media="all" title="Screen">
-    <link rel="stylesheet" href="css/jquery.rondell.css" type="text/css" media="all" title="Screen">
-    <script src="js/modernizr-2.0.6.min.js"></script>
-<!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
+<style type="text/css">
 
+#sliderttop {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#sliderttop ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#sliderttop ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #54566B;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    //http://bit.ly/1LRZGaY
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#sliderttop ul li').length;
+  var slideWidth = $('#sliderttop ul li').width();
+  var slideHeight = $('#sliderttop ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#sliderttop').css({ width: slideWidth, height: slideHeight });
+  
+  $('#sliderttop ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#sliderttop ul li:last-child').prependTo('#sliderttop ul');
+
+$("#sliderttop").on("swipeleft",function(){
+  $('#sliderttop ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderttop ul li:last-child').prependTo('#sliderttop ul');
+            $('#sliderttop ul').css('left', '');
+        });
+});
+
+$("#sliderttop").on("swiperight",function(){
+ $('#sliderttop ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderttop ul li:first-child').appendTo('#sliderttop ul');
+            $('#sliderttop ul').css('left', '');
+        });
+});
+    function moveLeft() {
+        $('#sliderttop ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderttop ul li:last-child').prependTo('#sliderttop ul');
+            $('#sliderttop ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#sliderttop ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderttop ul li:first-child').appendTo('#sliderttop ul');
+            $('#sliderttop ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+
+
+});    
+
+</script>
+
+<style type="text/css">
+.iGallery   {list-style:none; padding:0px; margin:0px}
+.iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
+
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage  {background-color:#000; margin:0px; padding:0px; border:none; height:100%; width:100%}
+#tadcontent   {padding:0px; margin:0px; position:relative; background:#000; height:100%; width:100%;}
+#imageflipimg {vertical-align:middle; height:100%; width:100%; z-index:98; background-position:center; background-size:100% 100%; text-align:center; background-repeat:no-repeat }
+#imagefliper  {width:100%; top:45px; bottom:0px; position:absolute; z-index:99}
+#tadnavi    {position:fixed; top:0px; z-index:100; width:100%; opacity:0.7; display:block }
+#tadinfo    {position:fixed; display:none; bottom:0px; width:100%; padding:5px; background-color:#333333; opacity:0.7; color:#FFFFFF; text-align:center; font-size:small; font-family:Verdana, Geneva, sans-serif}
+
+</style>
+<script type="text/javascript">
+$(document).on('pageshow', '#sh_verified_false_inside', function(){  
+  $('.iGallery').imageflip()
+  //alert('8');
+})
+</script>
 
 
       <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
@@ -2833,46 +3655,30 @@ a.control_next {
         <a href="#" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s' id="before_new_listrtuio"><img src="images/arrow.png" alt="" class="img_sign"></a>
         <a href="#overlayPanelaster" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'>
           <i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">New Verification</h1>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">sh_verified_false_inside</h1>
          </div>
 
 <div data-role="main" class="ui-content">
 
-     <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
-        <div id="rondellToptobeapprovedEEEE" class="showOnJS hidden">
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
+
+<div id="sliderttop" style="width: 500px; height: 300px;">
+  <a href="#" class="control_next">></a>
+  <a href="#" class="control_prev"><</a>
+ <ul class="iGallery ssnewinpwe" style="width: 2000px; margin-left: -500px;" >
+
+
+<!--   <li >slide 1</li>
+     <li style="background: #aaa;" > slide 2</li>
+    <li >slide 3</li>
+     <li style="background: #aaa;" > slide 4</li>  -->
  
-     <!--slider div-->
+  </ul>
 
-    <div class="approved_shc rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-
-    <div class=" rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div> 
-
-
-    <div class="approved_shd rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>    
-
-    <div class="approved_shb rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-     <div class="approved_sha rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-    <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-    <div class="approved_she rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-   <div class="approved_shf rondell-item rondell-item-focused  " style="opacity: 1; width: 149px; height: 200px; left: 125.5px; top: 10px; z-index: 1003; display: block;">
-   
-     <div class="rondell-item-overlay" style="height: auto; overflow: auto; opacity: 1; display: block;"></div></div>  
-
-
-      </div>
-      </div> 
-
+</div>
+</div>
+</div>
 
 
 
@@ -2954,28 +3760,6 @@ a.control_next {
 </div>
  </form>
     </div> -->
-
-  <script type="text/javascript">
-(function() {
-  $("#rondellToptobeapprovedEEEE").rondell({
-    preset: "",
-    radius: {
-      x: 130
-    },
-    center: {
-      left: 200,
-      top: 110
-    },
-    itemProperties: {
-      size: {
-        width: 100,
-        height: 100
-      }
-    }
-  });
-
-}).call(this);
-</script>
 
 </div>
 
@@ -3262,7 +4046,7 @@ a.control_next {
 <div data-role="main" class="ui-content">
 
      <div class="column size1of2 " >
-      <img src="slide/examples/images/sallery.jpg" alt="Rondell preview" class="hideOnJS">
+     
         <div id="rondellTopnew" class="showOnJS hidden">
  
      <!--slider div-->
@@ -3434,25 +4218,6 @@ a.control_next {
 
 
 <style type="text/css">
-/*  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
-*/
-/*html {
-  border-top: 5px solid #fff;
-  background: #58DDAF;
-  color: #2a2a2a;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans';
-}*/
-
-/*h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
-}*/
 
 #sliderb {
   position: relative;
@@ -3530,6 +4295,8 @@ a.control_next {
         moveRight();
     }, 3000);
   });
+
+
   
   var slideCount = $('#sliderb ul li').length;
   var slideWidth = $('#sliderb ul li').width();
@@ -3542,6 +4309,26 @@ a.control_next {
   
     $('#sliderb ul li:last-child').prependTo('#sliderb ul');
 
+   $("#sliderb").on("swipeleft",function(){
+    //alert("You swiped left!");
+      $('#sliderb ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderb ul li:last-child').prependTo('#sliderb ul');
+            $('#sliderb ul').css('left', '');
+        });
+    
+  });
+
+   $("#sliderb").on("swiperight",function(){
+    // alert("You swiped right!");
+   $('#sliderb ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderb ul li:first-child').appendTo('#sliderb ul');
+            $('#sliderb ul').css('left', '');
+        });
+});
     function moveLeft() {
         $('#sliderb ul').animate({
             left: + slideWidth
@@ -3550,6 +4337,7 @@ a.control_next {
             $('#sliderb ul').css('left', '');
         });
     };
+
 
     function moveRight() {
         $('#sliderb ul').animate({
@@ -3573,7 +4361,7 @@ a.control_next {
 });    
 
 </script>
-<script src="js/imageflip.mini.js"></script>
+
 <style type="text/css">
 .iGallery   {list-style:none; padding:0px; margin:0px}
 .iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
@@ -3589,7 +4377,7 @@ a.control_next {
 </style>
 <script type="text/javascript">
 $(document).on('pageshow', '#pagedesign_veri', function(){  
-	//alert('9');
+  //alert('9');
   $('.iGallery').imageflip()
 })
 </script>
@@ -3649,11 +4437,10 @@ $(document).on('pageshow', '#pagedesign_veri', function(){
 
 <div data-role="main" class="ui-content">
 
- <h1>Incredibly Basic Slider</h1>
 <div id="sliderb" style="width: 500px; height: 300px;">
   <a href="#" class="control_next">></a>
   <a href="#" class="control_prev"><</a>
- <ul class="iGallery s3" style="width: 2000px; margin-left: -500px;" >
+ <ul class="iGallery sdd" style="width: 2000px; margin-left: -500px;" >
 
 
 <!--   <li >slide 1</li>
@@ -3746,26 +4533,6 @@ $(document).on('pageshow', '#pagedesign_veri', function(){
  <script src="js/super_not_veri_inisde.js"></script>
 
 <style type="text/css">
-/*  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
-*/
-/*html {
-  border-top: 5px solid #fff;
-  background: #58DDAF;
-  color: #2a2a2a;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans';
-}*/
-
-/*h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
-}*/
-
 #slider {
   position: relative;
   overflow: hidden;
@@ -3854,6 +4621,27 @@ a.control_next {
   
     $('#slider ul li:last-child').prependTo('#slider ul');
 
+$("#slider").on("swipeleft",function(){
+     $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+
+});
+
+$("#slider").on("swiperight",function(){
+
+          $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+
+});
+
     function moveLeft() {
         $('#slider ul').animate({
             left: + slideWidth
@@ -3885,7 +4673,7 @@ a.control_next {
 });    
 
 </script>
-<script src="js/imageflip.mini.js"></script>
+
 <style type="text/css">
 .iGallery   {list-style:none; padding:0px; margin:0px}
 .iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
@@ -3958,11 +4746,10 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
 
 <div data-role="main" class="ui-content">
 
- <h1>Incredibly Basic Slider</h1>
 <div id="slider" style="width: 500px; height: 300px;">
   <a href="#" class="control_next">></a>
   <a href="#" class="control_prev"><</a>
- <ul class="iGallery s1" style="width: 2000px; margin-left: -500px;">
+ <ul class="iGallery ssd" style="width: 2000px; margin-left: -500px;">
 
 
    <!-- <li class="s1">slide 1</li>
@@ -3973,10 +4760,10 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
   </ul>
 </div>
 
-<div class="slider_option">
+<!-- <div class="slider_option">
   <input type="checkbox" id="checkbox">
   <label for="checkbox">Autoplay Slider</label>
-</div> 
+</div>  -->
 
 <div class="ui-grid-solo">
 <div class="ui-block-a ">
@@ -4789,25 +5576,6 @@ style=" padding:17px !important;">
  <script src="js/supervisor_inprogress_inside.js"></script>
 
 <style type="text/css">
-/*  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
-*/
-/*html {
-  border-top: 5px solid #fff;
-  background: #58DDAF;
-  color: #2a2a2a;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans';
-}*/
-
-/*h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
-}*/
 
 #sliderbc {
   position: relative;
@@ -4885,6 +5653,8 @@ a.control_next {
         moveRight();
     }, 3000);
   });
+
+
   
   var slideCount = $('#sliderbc ul li').length;
   var slideWidth = $('#sliderbc ul li').width();
@@ -4897,6 +5667,25 @@ a.control_next {
   
     $('#sliderbc ul li:last-child').prependTo('#sliderbc ul');
 
+   $("#sliderbc").on("swipeleft",function(){
+   // alert("You swiped left!");
+      $('#sliderbc ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#sliderbc ul li:last-child').prependTo('#sliderbc ul');
+            $('#sliderbc ul').css('left', '');
+        });
+    
+  });
+
+   $("#sliderbc").on("swiperight",function(){
+   $('#sliderbc ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#sliderbc ul li:first-child').appendTo('#sliderbc ul');
+            $('#sliderbc ul').css('left', '');
+        });
+});
     function moveLeft() {
         $('#sliderbc ul').animate({
             left: + slideWidth
@@ -4905,6 +5694,7 @@ a.control_next {
             $('#sliderbc ul').css('left', '');
         });
     };
+
 
     function moveRight() {
         $('#sliderbc ul').animate({
@@ -4928,7 +5718,7 @@ a.control_next {
 });    
 
 </script>
-<script src="js/imageflip.mini.js"></script>
+
 <style type="text/css">
 .iGallery   {list-style:none; padding:0px; margin:0px}
 .iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
@@ -5004,11 +5794,11 @@ $(document).on('pageshow', '#pagedesign', function(){
 
 <div data-role="main" class="ui-content">
 
- <h1>Incredibly Basic Slider</h1>
+
 <div id="sliderbc" style="width: 500px; height: 300px;">
   <a href="#" class="control_next">></a>
   <a href="#" class="control_prev"><</a>
- <ul class="iGallery s" style="width: 2000px; margin-left: -500px;" >
+ <ul class="iGallery sddq" style="width: 2000px; margin-left: -500px;" >
 
 
 <!--   <li >slide 1</li>
@@ -5184,12 +5974,12 @@ $(document).on('pageshow', '#pagedesign', function(){
 
          <div class="ui-grid-solo">
           <div class="ui-block-a"> 
-      <div class="column size1of2">
+  <!--     <div class="column size1of2">
 
         <div id="rondellTopDemo" class="showOnJS hidden">
         <a rel="rondell_1" href="examples/images/galery/band.jpg" title="My favourite band"><img src="examples/images/galery/band_small.jpg" alt="Band" title="My favourite band"></a>
         <a rel="rondell_1" href="examples/images/galery/dog.jpg" title="My dog"><img src="examples/images/galery/dog_small.jpg" alt="Dog" title="My dog"></a><a rel="rondell_1" href="examples/images/galery/cat.jpg" title="My cat"><img src="examples/images/galery/cat_small.jpg" alt="Cat" title="My cat"></a><a rel="rondell_1" href="examples/images/galery/boar.jpg" title="Boar"><img src="examples/images/galery/boar_small.jpg" alt="Boar" title="Boar"></a></div>
-      </div>
+      </div> -->
   </div>
   </div>
 
@@ -5372,25 +6162,6 @@ $(document).on('pageshow', '#pagedesign', function(){
 <script src="js/jquery.mobile-1.1.1.min.js"></script>
 <link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" /> -->
 <style type="text/css">
-/*  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
-*/
-/*html {
-  border-top: 5px solid #fff;
-  background: #58DDAF;
-  color: #2a2a2a;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans';
-}*/
-
-/*h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
-}*/
 
 #slidera {
   position: relative;
@@ -5428,7 +6199,7 @@ a.control_prev, a.control_next {
   padding: 4% 3%;
   width: auto;
   height: auto;
-  background: #2a2a2a;
+  background: #54566B;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -5440,6 +6211,7 @@ a.control_prev, a.control_next {
 a.control_prev:hover, a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
+      background-color: #54566B;
 }
 
 a.control_prev {
@@ -5480,6 +6252,26 @@ a.control_next {
   
     $('#slidera ul li:last-child').prependTo('#slidera ul');
 
+$("#slidera").on("swipeleft",function(){
+     $('#slidera ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slidera ul li:last-child').prependTo('#slidera ul');
+            $('#slidera ul').css('left', '');
+        });
+
+});
+
+$("#slidera").on("swiperight",function(){
+
+    $('#slidera ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slidera ul li:first-child').appendTo('#slidera ul');
+            $('#slidera ul').css('left', '');
+        });
+});
+
     function moveLeft() {
         $('#slidera ul').animate({
             left: + slideWidth
@@ -5511,7 +6303,7 @@ a.control_next {
 });    
 
 </script>
-<script src="js/imageflip.mini.js"></script>
+
 <style type="text/css">
 .iGallery   {list-style:none; padding:0px; margin:0px}
 .iGallery li  {list-style:none; padding:2px; margin:2px; border:1px solid #999; float:left}
@@ -5588,21 +6380,29 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
 
 <div data-role="main" class="ui-content">
 
+<div class="ui-grid-solo">
+  <div class="ui-block-a">
 
- <h1>Incredibly Basic Slider</h1>
 <div id="slidera" style="width: 500px; height: 300px;">
   <a href="#" class="control_next">></a>
   <a href="#" class="control_prev"><</a>
- <ul class="iGallery s2" style="width: 2000px; margin-left: -500px;" >
+ <ul class="iGallery s22" style="width: 2000px; margin-left: -500px;" >
 
 
 <!--   <li >slide 1</li>
      <li style="background: #aaa;" > slide 2</li>
     <li >slide 3</li>
-     <li style="background: #aaa;" > slide 4</li> 
- -->
+     <li style="background: #aaa;" > slide 4</li>  -->
+ 
   </ul>
+
 </div>
+</div>
+</div>
+<!-- <div class="slider_option">
+  <input type="checkbox" id="checkbox">
+  <label for="checkbox">Autoplay Slider</label>
+</div>  -->
 
       <div class="proof">
 <div class="ui-grid-b pri_grid_2" id="sda_newvericom">

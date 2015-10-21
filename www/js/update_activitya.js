@@ -252,7 +252,7 @@ var remarkg=document.getElementById('remarkg').value;
 var loginistant=document.getElementById('messageText').value;
 document.getElementById('messageText').value = "";
 var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
-
+alert(status_val_inpro);
 var sdocument=$('input[type=file]').val().split('\\').pop();
 //alert(sdocument+' submit');
 
@@ -276,7 +276,49 @@ $.ajax({
   dataType: 'json',
   error: onError
 });
+if(status_val_inpro == 'Inprogress'){
+ $.mobile.changePage($('#primarymessage'), { transition: "none", changeHash: true, reverse: false });
 return false;
+}else{
+  //alert(region_num);
+  //$("input[type='radio']:first").attr("checked", "checked");
+  $.ajax({url: "http://staging.eimpressive.com/slim-cor/count.php?region_num="+region_num,
+  data:$('#update_to_inprogressw').serialize(),
+  type: 'post',                   
+  async: 'true',
+  crossDomain: true,
+  dataType: 'json',
+  beforeSend: function() {
+  },
+  complete: function() {
+  },
+  success: function (result) {
+    console.log('searchlpa' +result);
+    if(result[0]){
+      $("#popupsearchmade").popup("open");
+      sessionStorage.setItem("supervisor_inprogress_count_array",JSON.stringify(result[0]));
+      sessionStorage.setItem("supervisor_verified_count_array",JSON.stringify(result[1]));
+       sessionStorage.setItem("supervisor_not_verified_count_array",JSON.stringify(result[2]));
+       sessionStorage.setItem("supervisor_completed_count_array",JSON.stringify(result[3]));
+      $.mobile.loading().hide();
+      $.mobile.changePage($('#dashboard'), { transition: "none", changeHash: true, reverse: false });
+//$.mobile.changePage("dashboard",{ transition: "none", changeHash: true, reverse: false }); 
+}else {
+  alert('No Data Found for the search record'); 
+}
+
+return false;
+},
+error: function (request,error) {    
+  console.log(request);
+  console.log(error);  
+  $("#Network").popup("open");         
+  alert('Network error has occurred please try again!');
+}
+});
+/*   $.mobile.changePage($('#dashboard'), { transition: "none", changeHash: true, reverse: false });
+return false;*/
+}
 });
 
 

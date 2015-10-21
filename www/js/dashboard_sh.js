@@ -39,7 +39,7 @@ return false;
 });*/
 
     $(document).off('click', '#reject_shsh').on('click', '#reject_shsh', function() {
-            alert('reject_shsh');
+            //alert('reject_shsh');
 
   $.mobile.changePage($('#sh_reject_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
@@ -111,7 +111,7 @@ for(a=0;a<sh_verified_false_count.length;a++){
 
 $(document).off('click', '#sh_new_verification').on('click', '#sh_new_verification', function() { 
 
-alert(region+'region new sh');
+//alert(region+'region new sh');
 
 $.ajax({url: "http://staging.eimpressive.com/slim-cor/dash_sh_new.php?region="+region+"&regionsection="+regionsection+"&state="+state,
     data:$('#e').serialize(),
@@ -156,6 +156,7 @@ $.ajax({url: "http://staging.eimpressive.com/slim-cor/dash_sh_new.php?region="+r
 $(document).off('click', '#inprogress_sh').on('click', '#inprogress_sh', function() { 
 
 //alert(region+'region inprogress_sh');
+//alert(regionsection+'region inprogress_sh');
 
 $.ajax({url: "http://staging.eimpressive.com/slim-cor/dash_sh_inprogress.php?region="+region+"&regionsection="+regionsection,
     data:$('#e').serialize(),

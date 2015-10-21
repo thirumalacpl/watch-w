@@ -1,5 +1,9 @@
 $(document).on('pageshow', '#sh_reject_inside', function(){  
-alert("sh_reject_inside");
+//alert("sh_reject_inside");
+
+  $('.iGallery').imageflip()
+
+  $('.ssnewinpcq').empty();
 
 $('#sda_newcwwoccyr').empty();
 $('#lii_newcwwoccyr').empty();
@@ -92,7 +96,7 @@ var verification_user_id = user_obja.Verification_Master_Id;
 
 
 if(insert_emp !== null){
-  alert(insert_emp.First_Name+'insert emp');
+  //alert(insert_emp.First_Name+'insert emp');
   var  name=insert_emp.First_Name;
  var verification_user_id=insert_emp.Verification_Master_Id;
   var  verification_for=insert_emp.Verification_Category;
@@ -107,7 +111,7 @@ if(insert_emp !== null){
 }
 
 if(insert_edu !== null){
-    alert(insert_edu.First_Name+'insert edu');
+   // alert(insert_edu.First_Name+'insert edu');
   var  name=insert_edu.First_Name;
  var verification_user_id=insert_edu.Verification_Master_Id;
   var  verification_for=insert_edu.Verification_Category;
@@ -122,7 +126,7 @@ if(insert_edu !== null){
 }
 
 if(insert_add !== null){
-    alert(insert_add.First_Name+'insert edu');
+  //  alert(insert_add.First_Name+'insert edu');
   var  name=insert_add.First_Name;
  var verification_user_id=insert_add.Verification_Master_Id;
   var  verification_for=insert_add.Verification_Category;
@@ -153,7 +157,7 @@ $('#secondda').append( '<option value="New">Select Status</option><option value=
 
 
 if(qualification_id == '7' || qualification_id == '8' || qualification_id == '9' || qualification_id == '10' || qualification_id == '11'){
-alert('emplo inside');
+//alert('emplo inside');
 
 var sd='<div class="ui-block-a pri_grid_1 pri_grid_bor"><img src="images/primary/degree-icon.png" class="iomg" alt=""><p class="pri_p">'+user_obja.qname+'</p><span class="pri_span">Task Name</span></div><div class="ui-block-b pri_grid_1 pri_grid_bor"><img src="images/primary/yearofpassing-icon.png" class="iomg" alt=""><p class="pri_p">'+currentobj_employment_records.employee_final_salary+'</p><span class="pri_span">Salary</span></div><div class="ui-block-c pri_grid_1"><img src="images/primary/percentage.png" class="iomg" alt=""><p class="pri_p">'+currentobj_employment_records.employer_zipcode+'</p><span class="pri_span">City</span></div>'
 $('#sda_newcwwoccyr').append(sd);
@@ -174,6 +178,10 @@ for(a=0;a<employment_upload_array.length;a++){
 
   if(empimgempl == qualification_id && empidempl == verification_user_id ){
 
+
+var oneemp=employimg_obj.document;
+//alert(oneemp);
+  $('.ssnewinpcq').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
 
 
 k++;
@@ -230,7 +238,7 @@ $('.rejectf').append('<img src="http://115.118.113.83/watchguardlive/uploads/'+o
 
 
 if(qualification_id == '1' || qualification_id == '2' || qualification_id == '3' || qualification_id == '4' || qualification_id == '5'){
-alert('if education');
+//alert('if education');
 
 /*var sd=' <div class="ui-block-a grid_text grid_right  waves-effect waves-button"><img src="images/from-to.png" alt="" class="img_new">   <span id="designation"></span></div><div class="ui-block-b grid_text grid_right waves-effect waves-button "><img src="images/check-in.png" alt="" class="img_new"><span id="from"></span> </div><div class="ui-block-c grid_text grid_right waves-effect waves-button "><img src="images/save.png" alt="" class="img_new"> <span id="percentage"></span></div> <div class="ui-block-d grid_text waves-effect waves-button "><img src="images/location.png" alt="" class="img_new"> <span id="year_of_passing"></span></div>'
 $('#sda_new').append(sd);
@@ -256,6 +264,12 @@ var empid=employimg_obj.verification_master_id;
 if(empimg == qualification_id && empid == verification_user_id ) {
 //alert(empimg+"empimg");
 //var oneemp=employimg_obj.document;
+
+var oneemp=employimg_obj.document;
+//alert(oneemp);
+  $('.ssnewinpcq').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
+
 j++;
 oneemp[j]=employimg_obj.document;
 var arr_a=oneemp[0];
@@ -337,6 +351,10 @@ var oneid=addressimg_obj.user_id;
 
 if(oneimg == qualification_id && oneid == verification_user_id ){
 //alert("if address proof");
+var oneemp=addressimg_obj.document_name;
+//alert(oneemp);
+  $('.ssnewinpcq').append('<li><a href="http://staging.eimpressive.com/watchguardlive/documents/addressid/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/documents/addressid/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 j++;
 oneaddress[j]=addressimg_obj.document_name;
 
@@ -408,15 +426,14 @@ $(document).off('click', '#haributsecond').on('click', '#haributsecond', functio
 var x=document.getElementById('secondda').value;
 alert(x+'xxx');
 
-alert(name);
-alert(verification_user_id);
-alert(verification_for);
-alert(current_address);
-alert(location);
-alert(state);
-alert(qualification_name);
-alert(task_name);
-alert(type);
+//alert(name);
+//alert(verification_user_id);
+//alert(verification_for);
+//alert(current_address);
+//alert(location);
+//alert(qualification_name);
+//alert(task_name);
+//alert(type);
 
 if(x == 'New'){
   alert('Select Person To Assign');

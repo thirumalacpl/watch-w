@@ -234,7 +234,7 @@ for(a=0;a<supervisor_final_command_array.length;a++){
   if( hj == gj && huemploy == qualification_id){
   // alert("if log");
   supervisor_final_commanda = supervisor_final_command_array[a];
- alert(supervisor_final_commanda.verification_id+'supervisor_final_commanda');
+ //alert(supervisor_final_commanda.verification_id+'supervisor_final_commanda');
 }
 
 }

@@ -2,7 +2,7 @@ $(document).on('pageshow', '#pagedesign', function(){
 //alert('supervisor_inprogress_inside');
 $('.iGallery').imageflip()
 
-$('.s').empty();
+$('.sddq').empty();
 
 $('#logapp').empty();
 $('.document_imag_inprooneqa').empty();
@@ -206,6 +206,10 @@ if(empimg == coordinator_id && empid == verification_user_id ){
 //var oneemploy=employimg_obj.document;
 
 //alert(oneemploy);
+var oneemp=employimg_obj.document;
+//alert(oneemp);
+  $('.sddq').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 
 k++;
 oneemploy[k]=employimg_obj.document;
@@ -228,25 +232,29 @@ if (k == 1 ){
 if (k == 2 ){
   var oneo=oneemploy[k];
 //alert(oneo+'two');
-$('.document_imag_inprooneqb').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqb').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+   $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 if (k == 3 ){
   var oneo=oneemploy[k];
 //alert(oneo+'two');
-$('.document_imag_inprooneqa').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqa').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+   $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 if (k == 4 ){
   var oneo=oneemploy[k];
 //alert(oneo+'two');
-$('.document_imag_inprooneqe').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqe').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+   $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 if (k == 5 ){
   var oneo=oneemploy[k];
 //alert(oneo+'two');
-$('.document_imag_inprooneqf').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqf').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+   $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 
@@ -289,6 +297,10 @@ var empid=employimg_obj.verification_master_id;
 //alert(empid+'empid');
 if(empimg == coordinator_id && empid == verification_user_id ) {
 
+var oneemp=employimg_obj.document;
+//alert(oneemp);
+  $('.sddq').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 //var oneemp=employimg_obj.document;
 j++;
 oneemp[j]=employimg_obj.document;
@@ -311,25 +323,29 @@ if (j == 1 ){
 if (j == 2 ){
   var oneo=oneemp[j];
 //alert(oneo+'two');
-$('.document_imag_inprooneqb').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqb').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+ $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 if (j == 3 ){
   var oneo=oneemp[j];
 // alert(oneo+'two');
-$('.document_imag_inprooneqa').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqa').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+ $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 if (j == 4 ){
   var oneo=oneemp[j];
 //alert(oneo+'two');
-$('.document_imag_inprooneqe').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqe').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+ $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 if (j == 5 ){
   var oneo=oneemp[j];
 //alert(oneo+'two');
-$('.document_imag_inprooneqf').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+//$('.document_imag_inprooneqf').append('<img src="http://staging.eimpressive.com/uploads/'+oneo+'" alt="Band" title="My favourite band" class="rondell-item-image rondell-item-resizeable">');
+ $('.s').append('<li><a href="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"><img src="http://staging.eimpressive.com/watchguardlive/uploads/'+oneo+'"  style="height: 300px;width:350px"></a></li>');
 
 }
 
@@ -379,6 +395,11 @@ if(oneimg == coordinator_id && oneid == verification_user_id ){
 //alert("oneimg ======inside coordinator_id");
 //alert("oneid ======inside verification_user_id");
 //var oneproof=addressimg_obj.document_name;
+
+var oneemp=addressimg_obj.document_name;
+//alert(oneemp);
+  $('.sddq').append('<li><a href="http://staging.eimpressive.com/watchguardlive/documents/addressid/'+oneemp+'"><img src="http://staging.eimpressive.com/watchguardlive/documents/addressid/'+oneemp+'" style="height: 100%;width:100%" ></a></li>');
+
 
 j++;
 oneaddress[j]=addressimg_obj.document_name;

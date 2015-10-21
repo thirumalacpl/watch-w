@@ -85,8 +85,8 @@ insertassign_address_array =  JSON.parse(sessionStorage.getItem("insertassign_ad
 var superempty=sh_new_veri_list;
 
 if(superempty == ""){
-  alert(superempty+'No record Found');
-  $.mobile.changePage($('#co_dashboard'), { transition: "none", changeHash: true, reverse: false });
+  alert('No record Found');
+  $.mobile.changePage($('#dashboard_sh'), { transition: "none", changeHash: true, reverse: false });
 }
 
 for(a=0;a<sh_new_veri_list.length;a++){
@@ -217,11 +217,11 @@ for(a=0;a<insertassign_address_array.length;a++){
 //alert(g+'gg');
 
 if( huu == guu && huemployy == qualification_id ){
-alert(huu+'iiiiiiiiiiin'+guu);
-alert(huemployy+'iihu qualiiin'+qualification_id);
+//alert(huu+'iiiiiiiiiiin'+guu);
+//alert(huemployy+'iihu qualiiin'+qualification_id);
 insert_add = insertassign_address_array[a];
 //alert('employ');
-alert(insert_add.Verification_Master_Id+"emp----o"+insert_add.id)
+//alert(insert_add.Verification_Master_Id+"emp----o"+insert_add.id)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
 }
@@ -261,11 +261,11 @@ for(a=0;a<insertassign_education_array.length;a++){
 //alert(g+'gg');
 
 if( huu == guu && huemployy == qualification_id ){
-alert(huu+'iiiiiiiiiiin'+guu);
-alert(huemployy+'iihu qualiiin'+qualification_id);
+//alert(huu+'iiiiiiiiiiin'+guu);
+//alert(huemployy+'iihu qualiiin'+qualification_id);
 insert_edu = insertassign_education_array[a];
 //alert('employ');
-alert(insert_edu.Verification_Master_Id+"emp----o"+insert_edu.edu_type)
+//alert(insert_edu.Verification_Master_Id+"emp----o"+insert_edu.edu_type)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
 }
@@ -303,11 +303,11 @@ for(a=0;a<insertassign_employment_array.length;a++){
 //alert(g+'gg');
 
 if( huu == guu && huemployy == qualification_id ){
-alert(huu+'iiiiiiiiiiin'+guu);
-alert(huemployy+'iihu qualiiin'+qualification_id);
+//alert(huu+'iiiiiiiiiiin'+guu);
+//alert(huemployy+'iihu qualiiin'+qualification_id);
 insert_emp = insertassign_employment_array[a];
 //alert('employ');
-alert(insert_emp.Verification_Master_Id+"emp----o"+insert_emp.edu_type)
+//alert(insert_emp.Verification_Master_Id+"emp----o"+insert_emp.edu_type)
 //alert(employment_obja.user_id+'employment_records_array'+g);
 }
 }
