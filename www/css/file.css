@@ -1245,7 +1245,7 @@ div.upload input {
 
 .msg_mid_bgg{
         position: absolute;
-    /* background: rgb(76, 205, 211) !important; */
+   
     border-radius: 6px;
     float: right;
     width: 57%;
@@ -1273,7 +1273,7 @@ div.upload input {
 }
 .msg_mid_bgg {
           position: absolute;
-   /* background: rgb(76, 205, 211) !important;*/
+  
     border-radius: 6px;
     float: right;
     width: 57%;
@@ -1291,7 +1291,7 @@ div.upload input {
     padding: 5%;
     color: #fff !important;
     font-size: 12px;
-/*    float: left !important;*/
+
 }
  .msg_mid_bg_1 {
        position: relative;
@@ -1303,7 +1303,7 @@ div.upload input {
 
     .msg_mid_bgg {
        position: absolute;
-  /*  background: rgb(76, 205, 211) !important;*/
+
         border-radius: 6px;
         float: right;
           
@@ -1321,15 +1321,17 @@ div.upload input {
 
 .msg_mid_bgg:after {
        border-color: rgba(136, 183, 213, 0) !important;
-   /* border-left-color: rgb(76, 205, 211) !important;*/
+  
        border-left-color: rgb(162, 162, 162) !important;
     border-width: 7px;
     margin-top: -5px;
 }
 .msg_mid_bgg:before {
        border-color: rgba(194, 225, 245, 0) !important;
-   /* border-left-color: rgb(76, 205, 211) !important;*/
+   
        border-left-color: rgb(152, 152, 152) !important;
     border-width: 8px;
     margin-top: -7px;
 }
+
+

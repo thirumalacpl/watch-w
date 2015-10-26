@@ -100,7 +100,7 @@
 <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" /> -->
 
 
-<!-- <gap:plugin name="org.crosswalk.engine" version="1.3.0" /> -->
+<gap:plugin name="org.crosswalk.engine" version="1.3.0" />
 
 
 
