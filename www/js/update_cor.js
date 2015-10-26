@@ -1,5 +1,5 @@
 $(document).on('pageshow', '#update_cor', function(){  
-//alert('update_cor 222');
+alert('update_cor 222');
 
 $('#chatqc').empty();
  $(document).off('click', '#dashcooinee').on('click', '#dashcooinee', function() {
@@ -106,13 +106,13 @@ var time=datea.getHours()+':'+datea.getMinutes();
 
 if(idf == verification_user_id && type == qualification_id ){
 
-//alert(idf +'idf verificati '+verification_user_id);
-//alert(type +'type quakli'+qualification_id);
+//alert(idf +'idf verificati '+verification_user_id+'inside');
+//alert(type +'type quakli'+qualification_id+'inside');
 
 
 //alert(date+'2');
 if(status == 'supervisor' && text !==''){
-//alert('supervisor');
+
 //var chatq='<div class="ui-grid-b" style="padding-top:5%;"><div class="ui-block-a msg_grid_3"></div><div class="ui-block-b msg_grid_4">  <span class="msg_span_3">'+date+'</span><p class="msg_box msg_mid_bg">'+activity_lok_obj.activity_log+'</p><br> <i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;    padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">'+time+'</span></div><div class="ui-block-c msg_grid_5"><img src="images/primary/chat-icon.png" alt="" style="    padding: 6px 2px 1px 18px;"></div></div>'
 
 //var chatr='<div class="ui-grid-b" style="padding-top:5%;"><div class="ui-block-a msg_grid_3"><span class="msg_span_3">'+date+'</span> <br><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;    padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">'+time+'</span></div><div class="ui-block-b msg_grid_4">  <p class="msg_box msg_mid_bg">'+activity_lok_obj.activity_log+'</p></div><div class="ui-block-c msg_grid_5"><img src="images/primary/chat-icon.png" alt="" style="padding: 0px 2px 1px 18px;"></div></div>'

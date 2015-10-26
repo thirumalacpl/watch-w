@@ -3,62 +3,68 @@ $(document).on('pageshow', '#sh_completed_list', function(){
 $('#lis_shsol').empty();
 //alert("supervisor_list_view");
 
-$(document).off('click', '#dashcooinectccroo').on('click', '#dashcooinectccroo', function() {
+$(document).off('click', '#dashcooiuoiiqwwapc').on('click', '#dashcooiuoiiqwwapc', function() {
 
   $.mobile.changePage($('#dashboard_sh'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-  $(document).off('click', '#newshectccr').on('click', '#newshectccr', function() {
+  $(document).off('click', '#erdsfqwwapc').on('click', '#erdsfqwwapc', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_new_veri_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
- $(document).off('click', '#inprogresscooirtn').on('click', '#inprogresscooirtn', function() {
+ $(document).off('click', '#inprogresscooiuoiiqwwapc').on('click', '#inprogresscooiuoiiqwwapc', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-  $(document).off('click', '#waitingnectccr').on('click', '#waitingnectccr', function() {
+  $(document).off('click', '#waitinguoiiqwwapc').on('click', '#waitinguoiiqwwapc', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_waiting_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
    
- $(document).off('click', '#shapprovednectccr').on('click', '#shapprovednectccr', function() {
+ $(document).off('click', '#shapproveduoiiqwwapc').on('click', '#shapproveduoiiqwwapc', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_tobe_approved_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-      $(document).off('click', '#completedshnectccr').on('click', '#completedshnectccr', function() {
+      $(document).off('click', '#completedshuoiiiqwwapc').on('click', '#completedshuoiiiqwwapc', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_completed_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
-
-/*                  $(document).off('click', '#shnotverin').on('click', '#shnotverin', function() {
+                  $(document).off('click', '#shnotveriuoiqwwapc').on('click', '#shnotveriuoiqwwapc', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#supervisor_list_view'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-  /*          $(document).off('click', '#rejectii').on('click', '#rejectii', function() {
+            $(document).off('click', '#rejectieiuoiiqwwapc').on('click', '#rejectieiuoiiqwwapc', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#sh_reject_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_reject_listio'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-   $(document).off('click', '#signoutcooinectccr').on('click', '#signoutcooinectccr', function() {
+$(document).off('click', '#verifaluoiiqwwapc').on('click', '#verifaluoiiqwwapc', function() {
+  //sessionStorage.getItem.clear;
+  //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
+  $.mobile.changePage($('#sh_Verified_false'), { transition: "none", changeHash: true, reverse: false });
+return false;
+});
+
+    $(document).off('click', '#signoutcooiiiqwwapc').on('click', '#signoutcooiiiqwwapc', function() {
   sessionStorage.clear(); 
    
   $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });

@@ -3,62 +3,68 @@ $(document).on('pageshow', '#sh_waiting_list', function(){
 $('#lis_shsoll').empty();
 //alert("supervisor_list_view");
 
-$(document).off('click', '#dashcooinec').on('click', '#dashcooinec', function() {
+$(document).off('click', '#dashcooiuoiiqw').on('click', '#dashcooiuoiiqw', function() {
 
   $.mobile.changePage($('#dashboard_sh'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-  $(document).off('click', '#newshec').on('click', '#newshec', function() {
+  $(document).off('click', '#erdsfqw').on('click', '#erdsfqw', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_new_veri_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-/* $(document).off('click', '#inprogresscooin').on('click', '#inprogresscooin', function() {
+ $(document).off('click', '#inprogresscooiuoiiqw').on('click', '#inprogresscooiuoiiqw', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#supervisor_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-  $(document).off('click', '#waitingnec').on('click', '#waitingnec', function() {
+  $(document).off('click', '#waitinguoiiqw').on('click', '#waitinguoiiqw', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_waiting_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
    
- $(document).off('click', '#shapprovednec').on('click', '#shapprovednec', function() {
+ $(document).off('click', '#shapproveduoiiqw').on('click', '#shapproveduoiiqw', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_tobe_approved_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-      $(document).off('click', '#completedshnec').on('click', '#completedshnec', function() {
+      $(document).off('click', '#completedshuoiiiqw').on('click', '#completedshuoiiiqw', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_completed_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
-
-/*                  $(document).off('click', '#shnotverin').on('click', '#shnotverin', function() {
+                  $(document).off('click', '#shnotveriuoiqw').on('click', '#shnotveriuoiqw', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#supervisor_list_view'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-  /*          $(document).off('click', '#rejectii').on('click', '#rejectii', function() {
+            $(document).off('click', '#rejectieiuoiiqw').on('click', '#rejectieiuoiiqw', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#sh_reject_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_reject_listio'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-   $(document).off('click', '#signoutcooinec').on('click', '#signoutcooinec', function() {
+$(document).off('click', '#verifaluoiiqw').on('click', '#verifaluoiiqw', function() {
+  //sessionStorage.getItem.clear;
+  //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
+  $.mobile.changePage($('#sh_Verified_false'), { transition: "none", changeHash: true, reverse: false });
+return false;
+});
+
+    $(document).off('click', '#signoutcooiiiqw').on('click', '#signoutcooiiiqw', function() {
   sessionStorage.clear(); 
    
   $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });

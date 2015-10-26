@@ -16,7 +16,7 @@ $('.document_imag_inproone_newdd').empty()
 $('.document_imag_inproone_newee').empty()
 $('.document_imag_inproone_newff').empty()
 
- $(document).off('click', '#dashcooii').on('click', '#dashcooii', function() {
+ $(document).off('click', '#dashcooiuo').on('click', '#dashcooiuo', function() {
 
   $.mobile.changePage($('#dashboard_sh'), { transition: "none", changeHash: true, reverse: false });
 return false;
@@ -29,60 +29,61 @@ return false;
 return false;
 });*/
 
- $(document).off('click', '#inprogresscooii').on('click', '#inprogresscooii', function() {
+ $(document).off('click', '#inprogresscooiuo').on('click', '#inprogresscooiuo', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#supervisor_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-  $(document).off('click', '#waitingi').on('click', '#waitingi', function() {
+  $(document).off('click', '#waitinguo').on('click', '#waitinguo', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_waiting_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
    
- $(document).off('click', '#shapprovedi').on('click', '#shapprovedi', function() {
+ $(document).off('click', '#shapproveduo').on('click', '#shapproveduo', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_tobe_approved_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-      $(document).off('click', '#completedshi').on('click', '#completedshi', function() {
+      $(document).off('click', '#completedshuo').on('click', '#completedshuo', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_completed_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
-                  $(document).off('click', '#shnotverii').on('click', '#shnotverii', function() {
+                  $(document).off('click', '#shnotveriuo').on('click', '#shnotveriuo', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#supervisor_list_view'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-  /*          $(document).off('click', '#rejectii').on('click', '#rejectii', function() {
+            $(document).off('click', '#rejectieiuo').on('click', '#rejectieiuo', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#sh_reject_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_reject_listio'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-    $(document).off('click', '#signoutcooii').on('click', '#signoutcooii', function() {
+                        $(document).off('click', '#verifaluo').on('click', '#verifaluo', function() {
+  //sessionStorage.getItem.clear;
+  //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
+  $.mobile.changePage($('#sh_Verified_false'), { transition: "none", changeHash: true, reverse: false });
+return false;
+});
+
+    $(document).off('click', '#signoutcooiuo').on('click', '#signoutcooiuo', function() {
   sessionStorage.clear(); 
    
   $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
-$(document).off('click', '#before_new_listr').on('click', '#before_new_listr', function() {
-//sessionStorage.getItem.clear;
-//$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-$.mobile.changePage($('#sh_new_veri_list'), { transition: "none", changeHash: true, reverse: false });
-return false;
-});
-
+    
 region_array = JSON.parse(sessionStorage.getItem("regionArray"));
   user_obja = JSON.parse(sessionStorage.getItem("currentobj"));
 

@@ -15,74 +15,74 @@ $('.waiting_imaged').empty()
 $('.waiting_imagee').empty()
 $('.waiting_imagef').empty()
 
-$(document).off('click', '#dashcooinect').on('click', '#dashcooinect', function() {
+$(document).off('click', '#dashcooiuoiiqww').on('click', '#dashcooiuoiiqww', function() {
 
   $.mobile.changePage($('#dashboard_sh'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-  $(document).off('click', '#newshect').on('click', '#newshect', function() {
+  $(document).off('click', '#erdsfqww').on('click', '#erdsfqww', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_new_veri_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-/* $(document).off('click', '#inprogresscooin').on('click', '#inprogresscooin', function() {
+ $(document).off('click', '#inprogresscooiuoiiqww').on('click', '#inprogresscooiuoiiqww', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#supervisor_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_inprogress_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-  $(document).off('click', '#waitingnect').on('click', '#waitingnect', function() {
+  $(document).off('click', '#waitinguoiiqww').on('click', '#waitinguoiiqww', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_waiting_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
    
- $(document).off('click', '#shapprovednect').on('click', '#shapprovednect', function() {
+ $(document).off('click', '#shapproveduoiiqww').on('click', '#shapproveduoiiqww', function() {
   //sessionStorage.getItem.clear;
  
   $.mobile.changePage($('#sh_tobe_approved_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
 
-      $(document).off('click', '#completedshnect').on('click', '#completedshnect', function() {
+      $(document).off('click', '#completedshuoiiiqww').on('click', '#completedshuoiiiqww', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#sh_completed_list'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
-
-/*                  $(document).off('click', '#shnotverin').on('click', '#shnotverin', function() {
+                  $(document).off('click', '#shnotveriuoiqww').on('click', '#shnotveriuoiqww', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
   $.mobile.changePage($('#supervisor_list_view'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-  /*          $(document).off('click', '#rejectii').on('click', '#rejectii', function() {
+            $(document).off('click', '#rejectieiuoiiqww').on('click', '#rejectieiuoiiqww', function() {
   //sessionStorage.getItem.clear;
   //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-  $.mobile.changePage($('#sh_reject_list'), { transition: "none", changeHash: true, reverse: false });
+  $.mobile.changePage($('#sh_reject_listio'), { transition: "none", changeHash: true, reverse: false });
 return false;
-});*/
+});
 
-   $(document).off('click', '#signoutcooinect').on('click', '#signoutcooinect', function() {
+$(document).off('click', '#verifaluoiiqww').on('click', '#verifaluoiiqww', function() {
+  //sessionStorage.getItem.clear;
+  //$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
+  $.mobile.changePage($('#sh_Verified_false'), { transition: "none", changeHash: true, reverse: false });
+return false;
+});
+
+    $(document).off('click', '#signoutcooiiiqww').on('click', '#signoutcooiiiqww', function() {
   sessionStorage.clear(); 
    
   $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });
 return false;
 });
-
-$(document).off('click', '#before_new_listrtr').on('click', '#before_new_listrtr', function() {
-//sessionStorage.getItem.clear;
-//$.mobile.changePage("index.html", { transition: "none", changeHash: true, reverse: false }); 
-$.mobile.changePage($('#sh_waiting_list'), { transition: "none", changeHash: true, reverse: false });
-return false;
-});
+  
 
 sh_regionarray = JSON.parse(sessionStorage.getItem("sh_regionarray"));
   user_obja = JSON.parse(sessionStorage.getItem("currentobj"));

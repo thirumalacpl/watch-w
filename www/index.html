@@ -301,7 +301,7 @@ a.control_next {
     border-radius: 50%;
     color:#fff;
        padding: 2% 4% 2% 5%;" id="inprogress_count">3</sup></a><br>
-        <p id="grid_opa_1"><span>In progress</span></p>
+        <p id="grid_opa_1"><span>In Progress</span></p>
       </div>
 
        <div class="ui-block-b grid_main1_1  ui-btn ui-corner-all ui-shadow logbutton waves-effect waves-button" id="verified">
@@ -339,7 +339,7 @@ a.control_next {
     color:#fff;
         padding: 2% 4% 2% 5%;" id="completed_count">0</sup>
         </a><br>
-        <p id="grid_opa3_1"><span>Completed</span></p>
+        <p id="grid_opa3_1"><span>Verified-True</span></p>
       </div>
 
 
@@ -355,7 +355,7 @@ a.control_next {
     color:#fff;
         padding: 2% 4% 2% 5%;" id="not_verified_count">3</sup>
         </a><br>
-          <p id="grid_opa4_1">Verify-False</p>
+          <p id="grid_opa4_1">Verified-False</p>
       </div>
     </div>
 </div>
@@ -625,10 +625,11 @@ a.control_next {
       <li id="inprogresscooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
        <li id="waiting"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
       <li id="shapproved"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedsh"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-      <!-- <li id="shnotveri"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="completedsh"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectiei"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifal"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+    <!--   <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li>  -->
       
        <li><a href="#" id="signoutcooi" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
@@ -867,17 +868,18 @@ $(document).on('pageshow', '#sh_new_inside', function(){
 
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="dashcooiuo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
       <!-- <li id="newsh"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
-      <li id="inprogresscooii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
-       <li id="waiting"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovedi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-      <!-- <li id="shnotverii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="inprogresscooiuo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+    <!--   <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li>  -->
       
-       <li><a href="#" id="signoutcooii" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiuo" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -1039,17 +1041,18 @@ $(document).on('pageshow', '#sh_new_inside', function(){
 
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newsh"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-    <!--   <li id="inprogresscooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li> -->
-       <li id="waitingn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovedn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-     <!--  <li id="shnotverin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsf"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooin" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiii" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -1282,17 +1285,18 @@ $(document).on('pageshow', '#sh_inprogress_inside', function(){
 
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooine"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshe"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-    <!--   <li id="inprogresscooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li> -->
-       <li id="waitingne"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovedne"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshne"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-     <!--  <li id="shnotverine"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiq"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooine" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiq" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -1577,23 +1581,25 @@ $(document).on('pageshow', '#sh_inprogress_inside', function(){
         </div>
 
             </div>
+
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooinectc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshectc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-    <!--   <li id="inprogresscooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li> -->
-       <li id="waitingnectc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovednectc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshnectc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-     <!--  <li id="shnotverinectc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiqwwa"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooinectc" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiqwwa" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
-   
+
 </div> 
 
 
@@ -1826,17 +1832,18 @@ $(document).on('pageshow', '#sh_tobe_approved_inside', function(){
 
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooinectccin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshectccin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-      <li id="inprogresscooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
-     <!--   <li id="waitingnectccin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li> -->
-      <li id="shapprovednectccin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshnectccin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-      <!-- <li id="shnotverinectcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiqwwap"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooinectcc" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiqwwap" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -2021,17 +2028,18 @@ $(document).on('pageshow', '#sh_tobe_approved_inside', function(){
 
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooinectccroo"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshectccr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-      <li id="inprogresscooirtn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
-       <li id="waitingnectccr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovednectccr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-    <!--   <li id="completedshnectccr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li> -->
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-      <!-- <li id="shnotverinectccr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiqwwapc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooinectccr" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiqwwapc" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -2042,7 +2050,7 @@ $(document).on('pageshow', '#sh_tobe_approved_inside', function(){
       <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
         <a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'></a>
         <a href="#overlopias" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s' style="margin-top:-1px"><i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Completed sh</h1>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Verified-True</h1>
       </div>
 
 
@@ -2260,31 +2268,29 @@ $(document).on('pageshow', '#sh_completed_inside', function(){
             <div class='col-xs-12 center-xs'>
               <div class='box profile-text box1'>
                   <strong id="userlistinh"></strong>
-      <!--           <span class='subline' id='city_name_newlistq'>Super Power User</span> -->
-              
+      <!-- <span class='subline' id='city_name_newlistq'>Super Power User</span> -->    
           </div>
         </div>
         </div>
 
             </div>
-
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooinectccrre"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshectccrr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-      <li id="inprogresscooinpp"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
-       <li id="waitingnectccrri"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovednectccrtyr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshnectccrwe"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-     <!--  <li id="shnotverinectccr"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiqwwapcc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooineactccrr" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiqwwapcc" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
-
     <!--<a href="#" id="super_view_inside_signout" class="ui-btn sio ui-icon-power ui-btn-icon-right">
       <span class="ww si">Sign Out</span></a>-->
 </div> 
@@ -2434,19 +2440,21 @@ $(document).on('pageshow', '#sh_completed_inside', function(){
         </div>
 
             </div>
+
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooinec"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshec"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-    <!--   <li id="inprogresscooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li> -->
-       <li id="waitingnec"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovednec"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshnec"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-     <!--  <li id="shnotverinec"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li> -->
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiqw"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooinec" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiq" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -2687,17 +2695,18 @@ $(document).on('pageshow', '#sh_waiting_inside', function(){
             </div>
 <ul data-role="listview" data-inset="true">
       
-      <li id="dashcooinect"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <li id="newshect"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
-    <!--   <li id="inprogresscooin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li> -->
-       <li id="waitingnect"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
-      <li id="shapprovednect"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
-      <li id="completedshnect"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Completed Verification</span></a></li>
-<!--        <li id="rejectii"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> -->
-      <li id="shnotverinect"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified </span></a></li>
-      <!-- <li id="reportcooi"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Help Desk </span></a></li> -->
+      <li id="dashcooiuoiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
+      <li id="erdsfqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li>
+      <li id="inprogresscooiuoiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Inprogress Verification</span></a></li>
+       <li id="waitinguoiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Waiting For Approval </span></a></li>
+      <li id="shapproveduoiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved </span></a></li>
+      <li id="completedshuoiiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+
+      <li id="rejectieiuoiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Rejected </span></a></li> 
+       <li id="verifaluoiiqww"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False </span></a></li> 
+   
       
-       <li><a href="#" id="signoutcooinect" class="ui-btn sio a_mar">
+       <li><a href="#" id="signoutcooiiiq" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
 </ul>
@@ -3921,7 +3930,7 @@ $(document).on('pageshow', '#sh_verified_false_inside', function(){
       <!-- <li id="inprogressinvn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedinvn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Inprogress</span></a></li>
       <li id="not_verifiedinvn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> To Be Approved</span></a></li>
-      <li id="completedinvn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+      <li id="completedinvn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
        <li><a href="#" id="signoutinvn" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -3933,7 +3942,7 @@ $(document).on('pageshow', '#sh_verified_false_inside', function(){
       <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
         <a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'></a>
         <a href="#overlayPanelag" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s' style="margin-top:-1px"><i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Verify-False</h1>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Verified-False</h1>
       </div>
 
 
@@ -4415,10 +4424,10 @@ $(document).on('pageshow', '#pagedesign_veri', function(){
 <ul data-role="listview" data-inset="true">
       
       <li id="dashinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-   <!--    <li id="inprogressinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Inprogress</span></a></li>
-      <li id="not_verifiedinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not verified</span></a></li>
-      <li id="completedinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+        <li id="completedinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
+      <li id="not_verifiedinvv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> Verified-False</span></a></li>
+    
        <li><a href="#" id="signoutinvv" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -4727,7 +4736,7 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
       <!-- <li id="inprogressinvnnn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedinvnnn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Inprogress</span></a></li>
       <li id="not_verifiedinvnnn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> To Be Approved</span></a></li>
-      <li id="completedinvnnn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+      <li id="completedinvnnn"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
        <li><a href="#" id="signoutinvnnn" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -4741,7 +4750,7 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
         <a href="#" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s' id="bfg_not"><img src="images/arrow.png" alt="" class="img_sign"></a>
         <a href="#overlayPanelastq" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'>
           <i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Verify-False</h1>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Verified-False</h1>
          </div>
 
 <div data-role="main" class="ui-content">
@@ -4929,8 +4938,9 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
       <li id="dashin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
     <!--   <li id="inprogressin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved</span></a></li>
-      <li id="not_verifiedin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not verified</span></a></li>
-      <li id="completedin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+      <li id="completedin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
+      <li id="not_verifiedin"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> Verified-False</span></a></li>
+      
        <li><a href="#" id="signoutin" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -5175,10 +5185,10 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
 <ul data-role="listview" data-inset="true">
       
       <li id="dashinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <!-- <li id="inprogressinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Inprogress</span></a></li>
-      <li id="not_verifiedinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not verified</span></a></li>
-      <li id="completedinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+     
+      <li id="completedinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
+       <li id="not_verifiedinv"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> Verified-False</span></a></li>
        <li><a href="#" id="signoutinv" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -5269,8 +5279,8 @@ style=" padding:17px !important;">
       <li id="dashboardlistinproveria"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
        <li id="new_verilistfromverifieda"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">New Verification</span></a></li>
       <li id="inproveria"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">In Progress</span></a></li>
-      <li id="verils"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified</span></a></li>
-      <li id="lpa_update_one"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not verified</span></a></li>
+      <li id="verils"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Verified-True</span></a></li>
+      <li id="lpa_update_one"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified-False</span></a></li>
        <li><a href="#" id="listviewnew_signout" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
   </ul>
@@ -5773,8 +5783,9 @@ $(document).on('pageshow', '#pagedesign', function(){
       <li id="dashins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
       <!-- <li id="inprogressins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved</span></a></li>
-      <li id="not_verifiedins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not verified</span></a></li>
-      <li id="completedins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+      <li id="completedins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
+      <li id="not_verifiedins"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> Verified-False</span></a></li>
+      
        <li><a href="#" id="signoutins" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -6099,10 +6110,9 @@ $(document).on('pageshow', '#pagedesign', function(){
 <ul data-role="listview" data-inset="true">
       
       <li id="dashinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <!-- <li id="inprogressinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Inprogress</span></a></li>
-      <li id="not_verifiedinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> To Be Approved</span></a></li>
-      <li id="completedinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified</span></a></li>
+      <li id="not_verifiedinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">To Be Approved</span></a></li>
+      <li id="completedinvnc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> Verified-False</span></a></li>
        <li><a href="#" id="signoutinvnc" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -6115,7 +6125,7 @@ $(document).on('pageshow', '#pagedesign', function(){
       <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
       <!--   <a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'><i class="zmdi zmdi-more-vert"></i></a>
          --><a href="#overlayPanelcyw" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Completed</h1>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Verified-True</h1>
       </div>
 
 
@@ -6358,10 +6368,10 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
 <ul data-role="listview" data-inset="true">
       
       <li id="dashinvnccc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
-      <!-- <li id="inprogressinvnccc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
+    
       <li id="verifiedinvnccc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">Inprogress</span></a></li>
       <li id="not_verifiedinvnccc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww"> To Be Approved</span></a></li>
-      <li id="completedinvnccc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not Verified</span></a></li>
+      <li id="completedinvnccc"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False</span></a></li>
        <li><a href="#" id="signoutinvnccc" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -6981,8 +6991,8 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
       <li id="dashinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">Dashboard</span></a></li>
       <!-- <li id="inprogressinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "><span class="ww">New Verification</span></a></li> -->
       <li id="verifiedinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right "  ><span class="ww">To Be Approved</span></a></li>
-      <li id="not_verifiedinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Not verified</span></a></li>
-      <li id="completedinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Completed</span></a></li>
+      <li id="not_verifiedinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-False</span></a></li>
+      <li id="completedinsy"><a href="#" class="ui-btn ui-icon-carat-r ui-btn-icon-right " ><span class="ww">Verified-True</span></a></li>
        <li><a href="#" id="signoutinsy" class="ui-btn sio a_mar">
       <span class="ww si">Sign Out <img src="images/signout.png" alt="" class="img_sign"></span></a></li>
 
@@ -6995,7 +7005,7 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
       <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
        <a href="#" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s' id="before_new_listupa"><img src="images/arrow.png" alt="" class="img_sign"></a>
         <a href="#overlayPanelajk" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s' style="margin-top:-1px"><i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Inprogress</h1>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s' style="text-align:center;">Activity Log</h1>
       </div>
 
    <div role="main" class="ui-content" data-inset="false">
@@ -7006,7 +7016,7 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
 
           <img src="images/primary/user-icon.png" alt="" class="mes_img">
           <h1 class="msg_h1" id="named">Thomos Budiman</h1>
-          <i class="zmdi zmdi-pin-drop zmdi-hc-lg" style="color: rgba(173, 173, 173, 0.58);"></i><span class="msg_p" id="locv">Indonesia</span>
+          <i class="zmdi zmdi-pin-drop zmdi-hc-lg" style="color: rgba(173, 173, 173, 0.58);"></i><span class="msg_p" id="locv">location</span>
       </div>
    </div>
    <div>
