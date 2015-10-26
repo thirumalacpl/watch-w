@@ -111,10 +111,10 @@
 <!--space plugin end-->
 
 <!--eee-->
-<!-- <gap:plugin name="com.cesidiodibenedetto.filechooser" version="1.0.0" /> -->
-<gap:plugin name="com.simplec.plugins.externalfiles" version="0.1.14" />
-<!-- 
-<gap:plugin name="com.cordova.plugins.fileopener" version="1.0.1" /> -->
+
+
+
+<!-- <gap:plugin name="com.cordova.plugins.fileopener" version="1.0.1" /> -->
 <!--ee end-->
 
 
@@ -125,6 +125,7 @@
 
 <!--not working dont use again-->
 <!-- <gap:plugin name="com.cesidiodibenedetto.filechooser" version="1.0.0" /> -->
+<!-- <gap:plugin name="com.simplec.plugins.externalfiles" version="0.1.14" /> -->
 <!--not working dont use again endddd-->
 
 
