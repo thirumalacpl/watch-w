@@ -89,9 +89,10 @@
 <gap:plugin name="org.apache.cordova.media" source="npm" /> 
 -->
 
+<gap:plugin name="cordova.plugins.diagnostic" source="npm" />
 
-<gap:plugin name="co.mwater.foregroundcameraplugin" version="0.1.1" />
-
+<!-- <gap:plugin name="co.mwater.foregroundcameraplugin" version="0.1.1" />
+ -->
 <gap:plugin name="org.apache.cordova.camera" version="0.2.9" />
 
 <gap:plugin name="org.apache.cordova.device-orientation" source="npm"/> 
