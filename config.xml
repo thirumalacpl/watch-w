@@ -89,7 +89,6 @@
 <gap:plugin name="org.apache.cordova.media" source="npm" /> 
 -->
 
-<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.3" />
 
 <gap:plugin name="co.mwater.foregroundcameraplugin" version="0.1.1" />
 
