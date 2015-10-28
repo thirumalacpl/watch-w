@@ -46,7 +46,6 @@ app.BookBindings = function () {
 // code to run before showing the page that lists the records.
 //run before the page is shown
 
-
 //upload a file to server once onchange is detected
 $('#pgAddBookBookImage').on('change', function () {
 $.mobile.loading("show", {

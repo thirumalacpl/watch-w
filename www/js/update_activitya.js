@@ -252,6 +252,7 @@ var remarkg=document.getElementById('remarkg').value;
 var loginistant=document.getElementById('messageText').value;
 document.getElementById('messageText').value = "";
 var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
+//var status_val_inpro='Inprogress';
 alert(status_val_inpro);
 var sdocument=$('input[type=file]').val().split('\\').pop();
 //alert(sdocument+' submit');

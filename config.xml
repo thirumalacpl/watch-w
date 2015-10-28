@@ -90,6 +90,7 @@
 <gap:plugin name="cordova-plugin-camera" source="npm" />
 <!-- plugins -->
 
+
 <!--waste space plugin start-->
 <!-- <plugin name="Battery" value="org.apache.cordova.BatteryListener" />
 <gap:plugin name="org.apache.cordova.globalization" source="npm"/> 
