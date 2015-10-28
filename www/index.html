@@ -48,16 +48,17 @@
    <!--icons-->
 <script type="text/javascript">
 	 document.addEventListener("deviceready", function(){
-    //http://bit.ly/1RBS4P9
-    //http://bit.ly/1LfIGwa
-    //http://bit.ly/1iu860Z
 
-    //http://bit.ly/1LPYhrE'
-
-    //http://bit.ly/1XsIBwA
-    
-      alert("123");
+      alert("deviceready");
  },true);
+</script>
+
+<script type="text/javascript">
+document.addEventListener("backbutton", onBackKeyDown, false);
+function onBackKeyDown(e) {
+  alert("back button");
+ e.preventDefault();
+}
 </script>
    <script type="text/javascript">
     function onLoad() {
